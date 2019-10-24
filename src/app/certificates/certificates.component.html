@@ -1,0 +1,62 @@
+<!-- <certificates.component.html> -->
+    <!-- <css></css> -->
+    <!-- <certificateName></certificateName> -->
+<div style="padding: 15px;" class="col-12">
+ 
+    <nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">Certification</span>
+    </nav><br>
+    
+    <nav class="navbar navbar-light bg-light">
+    <input class="form-control" type="text" placeholder="Search" [(ngModel)]="SearchText" aria-label="Search" class="col-3">
+    
+    <div *ngIf="status">
+    <form #fmfld="ngForm" (submit)="savefn(fmfld.value)">
+    <input style="margin-right:20px" class="form-control" type="text" name="certificationName" 
+    [(ngModel)]="svalue1" #valuefld="ngModel" class="col-5">
+    <button class="btn btn-primary" type="submit">Save</button>
+    </form>
+    </div>
+    <button *ngIf="!status" class="btn btn-primary" style="float:right" (click)="addfn()">Add</button>
+    </nav><br>
+    <table class="table table-striped table-bordered" >
+    <thead>
+    <tr style=" background-color: #0d599c;">
+    <th >Certification</th>
+    <th >Edit</th> 
+    
+    </tr>
+    </thead>
+    <tbody >
+    <tr *ngFor="let c of details | filter:SearchText | paginate:{itemsPerPage:4,currentPage:pageActual}">
+    <td >{{c.certificationName}}</td>
+    <td >
+    <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="id(c)"><i class="material-icons">
+        edit
+        </i></button>
+    </td>
+    </tr>
+    </tbody>
+    </table> 
+    <pagination-controls style="float: right;" (pageChange)="pageActual = $event"></pagination-controls>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Certification</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <form #fm="ngForm" (submit)="editfn(fm.value)">
+    <div class="modal-body">
+    <b>Certification name </b> <input class="form-control" name="certificationName" type="text" placeholder="Enter Service name" [(ngModel)]="modelvalue" aria-label="Search" >
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-success" type="submit">update</button>
+    <button type="button" class="btn btn-danger" data-dismiss="modal">cancel</button>
+    
+    </div>
+    </form>
+    </div>

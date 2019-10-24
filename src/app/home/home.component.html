@@ -1,0 +1,31 @@
+<div>
+    <app-navbar></app-navbar>
+  </div>
+
+  
+  <main class="row container-fluid">
+    <div class="col-md-2 col-xs-12">
+        <div class="tab">
+    
+            <button routerLink="dashboard">Dashboard</button>
+            <button routerLink="users" >Users</button>
+            <button  routerLink="skills">Skills</button>
+            <button routerLink="moi">Mode of Interview</button>
+            <button >PO</button>
+            <button >Invoice</button>
+            <button routerLink="customer">Customer Type</button>
+            <button routerLink="notice">Notice Period</button>
+            <button routerLink="qualification">Qualification</button>
+            <button routerLink="certificates">Certificates</button>
+            <button routerLink="bill">Billing Modal</button>
+            <button routerLink="service">Services</button>
+            <button routerLink="payment">Payment Terms</button>
+            <button >Roles</button>
+            <button routerLink="job">Job Locations</button>
+          </div>
+    </div>
+    <div class="col-md-9  col-xs-12">
+      <router-outlet></router-outlet>
+    </div>
+  
+  </main>

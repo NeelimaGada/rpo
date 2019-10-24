@@ -1,0 +1,105 @@
+<div style="padding: 15px;">
+    <h3>Dashboard</h3>
+    <main class="row" style="padding-bottom:20px;">
+        <div class="col-md-3 col-xs-12">
+            <section class="card shadow" style="padding: 15px;">
+                <h5>Earnings (Monthly)</h5>
+                <h4>$40,000</h4>
+            </section>
+        </div>
+        <div class="col-md-3 col-xs-12">
+            <section class="card shadow" style="padding: 15px;">
+                <h5>Earnings (Annual)</h5>
+                <h4>$40,000</h4>
+            </section>
+        </div>
+        <div class="col-md-3 col-xs-12">
+            <section class="card shadow" style="padding: 15px;">
+                <h5>Earnings (Annual)</h5>
+                <h4>$40,000</h4>
+            </section>
+        </div>
+        <div class="col-md-3 col-xs-12">
+            <section class="card shadow" style="padding: 15px;">
+                <h5>pending request</h5>
+                <h4>$40,000</h4>
+            </section>
+        </div>
+
+    </main>
+    <main class="row">
+        <div class="col-md-3 col-xs-12">
+            <section class="card shadow" style="padding: 15px;">
+                <h5>pending request</h5>
+                <h4>$40,000</h4>
+            </section>
+        </div>
+        <div class="col-md-3 col-xs-12">
+            <section class="card shadow" style="padding: 15px;">
+                <h5>pending request</h5>
+                <h4>$40,000</h4>
+            </section>
+        </div>
+        <div class="col-md-3 col-xs-12">
+            <section class="card shadow" style="padding: 15px;">
+                <h5>pending request</h5>
+                <h4>$40,000</h4>
+            </section>
+        </div>
+        <div class="col-md-3 col-xs-12">
+            <section class="card shadow" style="padding: 15px;">
+                <h5>pending request</h5>
+                <h4>$40,000</h4>
+            </section>
+        </div>
+    </main>
+
+
+
+    <br>
+    <div class="row">
+        <section class="col-md-6 col-xs-12">
+            <h3>Line chart</h3>
+            <div style="display: block;">
+                <canvas baseChart width="300" height="200" [datasets]="lineChartData" [labels]="lineChartLabels"
+                    [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
+                    [chartType]="lineChartType" [plugins]="lineChartPlugins">
+                </canvas>
+            </div>
+        </section>
+        <section class="col-md-6 col-xs-12">
+            <h3>Bar chart</h3>
+            <div style="display: block;">
+                <canvas baseChart width="300" height="200" [datasets]="barChartData" [labels]="barChartLabels"
+                    [options]="barChartOptions" [plugins]="barChartPlugins" [colors]="barChartColors"
+                    [legend]="barChartLegend" [chartType]="barChartType">
+                </canvas>
+            </div>
+
+        </section>
+
+    </div>
+    <br>
+    <div class="row">
+        <section class="col-md-6 col-xs-12">
+            <h3>Pie chart</h3>
+            <div style="display: block;">
+                <canvas baseChart width="300" height="200" [data]="pieChartData" [labels]="pieChartLabels"
+                    [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins"
+                    [legend]="pieChartLegend">
+                </canvas>
+            </div>
+        </section>
+        <section class="col-md-6 col-xs-12">
+            <h3>Doughnut chart</h3>
+            <div style="display: block;">
+                <canvas baseChart width="300" height="200" [data]="doughnutChartData" [labels]="doughnutChartLabels"
+                    [chartType]="doughnutChartType">
+                </canvas>
+            </div>
+        </section>
+
+    </div>
+
+
+</div>

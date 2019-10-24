@@ -1,0 +1,82 @@
+
+<div class="container" style="padding-top: 5px;">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <h1 class="navbar-brand" href="#">Mode of Interview</h1>
+    </nav>
+</div>
+<div class="container-fluid ">
+               
+   
+    <nav class="navbar navbar-light bg-light">
+
+        <form class="form-inline">
+          
+          <input class="form-control mr-sm-2" type="text" placeholder="Search"  [(ngModel)]="search3" 
+          [ngModelOptions]="{standalone: true}" >
+        
+        </form>
+        <form class="form-inline">
+          
+      <button class="btn btn-outline-success my-2 my-sm-0" (click)="add()" type="submit">ADD</button>
+        </form>
+      </nav>
+    
+    </div >
+    <br>
+    <div class="container">
+       
+        <table class="table">
+            <thead Class="bg-info">
+              <tr>
+                <th scope="col" class="text-center text-white">Mode of Interview</th>
+                <th scope="col" class="text-center text-white">Edit</th>  
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let u of tabledata | filter:search3 | paginate: { itemsPerPage: 5, currentPage: p }"  >
+                <td class="text-center">{{u.modeofInterview}}</td>
+                <td class="text-center"> <button  type="button" class="btn btn-primary"(click)="ed(u)" (click)="update(u)" data-toggle="modal" data-target="#exampleModalCenter">
+                    <i class="material-icons">
+                        edit
+                        </i>
+                </button>
+                </td>
+              </tr>
+           
+            </tbody>
+          </table>
+
+          <pagination-controls (pageChange)="p = $event" style="float:right"></pagination-controls>
+
+
+<!-- Modal -->
+  <div *ngIf="t">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Edit Interview Mode</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+    
+               Interview  Mode <input  name="modeofInterview" class="form-control" type="text" [(ngModel)]="data1" ><br>
+          </div>
+          <div class="modal-footer">
+           
+            <button type="button" class="btn btn-primary"  (click)="update1(data1)" data-dismiss="modal" >Update</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" >Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+ </div>
+
+
+
+

@@ -1,0 +1,33 @@
+.user{
+    padding:10px;
+ }
+ .sel{
+     width:60px;
+     height:30px;
+     border-radius:5px; 
+ }
+ 
+ thead{
+     background: rgb(14, 14, 71);
+     color:white;
+     text-align: center
+ }
+ .pencil{
+     background: rgb(14, 14, 71);
+     border:none;
+     padding: 5px 10px 5px 10px;
+     border-radius: 5px;
+     margin:5px;
+     color:white
+ }
+ .delete{
+     background: red;
+     border:none;
+     padding: 5px 10px 5px 10px;
+     border-radius: 5px;
+     margin:5px;
+     color:white
+ }
+ .page{
+        border: 1px solid black
+ }
